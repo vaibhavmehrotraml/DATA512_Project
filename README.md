@@ -1,14 +1,15 @@
-# Part 1: Common Analysis
+# Smoke Impact Estimation for Prescott City, Arizona
 The impact of wildland fires is widespread and there is a growing body of work pointing to the negative impacts of smoke on health, tourism, property, and other aspects of society.
 
 This project aims to conduct a minimal analysis of the fires and their historical impact for Prescott City, Arizona. We construct an estimate of the impact of these fires, compare it to the Air Quality Index data for the region, and predict the next 25 years of impact estimates.
 
 
 # Code Files (present in Notebooks/):
-- epa_airquality_vai.ipynb: A subset of the originial epa_airquality fetching notebook. This contains the logic to download AQI data.
-- process_aqi_data.ipynb: This notebook is responsible for aggregating AQI data and creating a condensed form to be used for downstream analysis
-- Part 1 - Common Analysis.ipynb: The complete analysis, from loading the fire polygons to applying GIS logic and developing an impact estimate can be found here. Each portion of the notebook is verbosely labelled.
-
+- EPA Air Quality.ipynb: A subset of the originial epa_airquality fetching notebook. This contains the logic to download AQI data.
+- Process API Data.ipynb: This notebook is responsible for aggregating AQI data and creating a condensed form to be used for downstream analysis
+- Part 1 - Common Analysis.ipynb: The initial analysis, from loading the fire polygons to applying GIS logic and developing an impact estimate can be found here. Each portion of the notebook is verbosely labelled.
+- DataAggregation: Compile multiple datasets into one.
+- Analysis.ipynb: The complete analysis which quantifies impact of smoke on health factors
 # Result Files (present in Results/):
 - AQIvsEstimate.png: AQI vs Impact Estimate for Prescott City, AZ 
 - acres_burnt.png: Graph showing total acres burned per year from 1963-2020 in a 1250 miles radius from Prescott City, AZ
@@ -23,7 +24,7 @@ This project aims to conduct a minimal analysis of the fires and their historica
 - impact_vs_fertility.png: Comparision of smoke estimate and fertility rate
 - predicted_incidence_rate.png: Predicted rate of asthma incidence taking into account the smoke estimate
 - predicted_premature.png: Predicted rate of premature deaths taking into account the smoke estimate
-        
+    
 # Data:
 ## [Combined Wildland Fire Datasets (US Geological Survey)](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81)
   The original data used for this analysis can be downloaded at the [USGS Website](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81). This project uses the GeoDatabase version of the data. The data was published along with the following paper:
@@ -80,8 +81,9 @@ Citation:
 Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Results. Seattle, United States: Institute for Health Metrics and Evaluation (IHME), 2020. Available from https://vizhub.healthdata.org/gbd-results/ 
 Institute for Health Metrics and Evaluation. (2021). IHME free-of-charge non-commercial user agreement. [online] Available at: https://www.healthdata.org/Data-tools-practices/data-practices/ihme-free-charge-non-commercial-user-agreement. 
 
+
 # Data Description
-A description of each column in the final merged dataframe can be found in the README file inside the `Results/` folder
+A description of each column in the final merged dataframe can be found in the README file called DataDescriptor.md
 # Dependencies:
 - Pandas
 - Seaborn
